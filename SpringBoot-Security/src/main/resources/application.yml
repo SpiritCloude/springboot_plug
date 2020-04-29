@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/mysecurity?serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  redis:
+    host: redis-19460.c1.asia-northeast1-1.gce.cloud.redislabs.com
+    password: HhYsDFZBbSe10D1eAYJBDECA0peTjLvQ
+    port: 19460
+    lettuce:
+      shutdown-timeout: 2000
+
+  session:
+    store-type: redis

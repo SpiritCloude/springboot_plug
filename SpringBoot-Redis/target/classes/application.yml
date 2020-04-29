@@ -1,0 +1,20 @@
+#spring:
+#  redis:
+#    host: redis-19460.c1.asia-northeast1-1.gce.cloud.redislabs.com
+#    password: HhYsDFZBbSe10D1eAYJBDECA0peTjLvQ
+#    port: 19460
+
+#spring:
+#  redis:
+#    host: 35.200.19.147
+#    password: HhYsDFZBbSe10D1eAYJBDECA0peTjLvQ
+#    port: 19460
+    
+#spring:
+#  redis:
+#    url: redis://:HhYsDFZBbSe10D1eAYJBDECA0peTjLvQ@redis-19460.c1.asia-northeast1-1.gce.cloud.redislabs.com:19460
+
+spring:
+  redis:
+    host: 47.92.232.26
+    port: 6379

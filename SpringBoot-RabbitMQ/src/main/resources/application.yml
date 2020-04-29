@@ -1,0 +1,19 @@
+spring:
+  rabbitmq:
+    host: 47.92.232.26
+    port: 5672
+    virtual-host: /
+    username: guest
+    password: guest
+#rabbit收到消息回调
+    publisher-confirm-type: correlated
+#消息未入队不丢    
+    template:
+      mandatory: true
+#发消息失败返回消息
+    publisher-returns: true
+#手动ack
+    listener:
+      direct:
+        acknowledge-mode: manual
+        prefetch: 1 #限制每次发送一条数据。

@@ -1,0 +1,23 @@
+## QQ邮箱配置
+spring:
+  mail:
+    host: smtp.qq.com #发送邮件服务器
+    username: 1599783433@qq.com #发送邮件的邮箱地址
+    password: laiohyhnrlnejjdd #客户端授权码，不是邮箱密码
+    default-encoding: utf-8
+    port: 587 #端口号465或587
+    protocol: smtp
+    from: 1599783433@qq.com
+    properties:
+      mail:
+        smtp:
+          auth: true
+        starttls:
+          required: true
+          enable: true 
+#设置是否需要认证，如果为true,那么用户名和密码就必须的。
+# 如果设置false，可以不设置用户名和密码，当然也得看你的对接的平台是否支持无密码进行访问的。
+# STARTTLS[1]是对纯文本通信协议的扩展。它提供一种方式将纯文本连接升级为加密连接（TLS或SSL），而不是另外使用一个端口作加密通信。
+    
+    
+    

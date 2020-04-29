@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+  <head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+  	<div>
+	    <h1>VIP1</h1>
+	    
+		<div sec:authorize="!isAuthenticated()">
+			游客，你好
+		</div>
+		<div sec:authorize="isAuthenticated()">
+			<h2>欢迎光临<br/>
+				当前登陆用户名:<label sec:authentication="name"></label><br/>
+				用户名具有角色:<label sec:authentication="principal.authorities"></label>
+			</h2>
+			<h3 sec:authorize="hasRole('ROLE_admin')">管理员</h3>
+			<h3 sec:authorize="hasRole('ROLE_123')">普通用户</h3>
+	  	
+	  		<form th:action="@{/logout}" method="post">
+	  			<button type="submit">注销</button>
+	  		</form>
+		</div>
+	    
+	</div>
+  </body>
+
+</html>

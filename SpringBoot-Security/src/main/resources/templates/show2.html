@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>注册</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  	<meta name="_csrf" th:content="${_csrf.token}"/>
+	<meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+</head>
+  <body>
+	<form action="/saveUser" method="post">
+		username:<input type="text" name="username">
+		<br>
+		password:<input type="text" name="password">
+		<input type="submit" value="登录" />
+		<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+	</form>
+	
+<hr>
+  <button type="button" id="emp_add">新增</button>
+ 
+ </body>
+ 
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		var token = $("meta[name='_csrf']").attr("content");
+		var header = $("meta[name='_csrf_header']").attr("content");
+		$(document).ajaxSend(function(e, xhr, options) {
+			xhr.setRequestHeader(header, token);
+		});
+	})
+</script>
+<script type="text/javascript">
+$("#emp_add").click(function addUser() {
+	var date={
+			id:"123",
+			username:"Tom",
+			password:"123"
+	};
+	$.ajax({
+	　　type : "POST",
+	　　url : "/addUser",
+	　　data : JSON.stringify(date),
+	　　contentType:"application/json",
+	　　dataType : "json",
+	　　success : function(data) {
+		　　if(data.status==20){
+		　　　　alert("系统提示","提交成功！");
+		　　}else{
+		　　　　　　alert("系统提示","提交失败！","error");
+		　　}
+		}
+	});
+
+})
+</script>
+</html>
