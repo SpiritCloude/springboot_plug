@@ -1,2 +1,2 @@
 # springboot_plug
-springboot整合redis rabbitMQ 
+springboot整合其他常用组件
