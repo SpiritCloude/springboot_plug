@@ -3,7 +3,7 @@ spring:
   mail:
     host: smtp.qq.com #发送邮件服务器
     username: 1599783433@qq.com #发送邮件的邮箱地址
-    password: laiohyhnrlnejjdd #客户端授权码，不是邮箱密码
+    password: xx #客户端授权码，不是邮箱密码
     default-encoding: utf-8
     port: 587 #端口号465或587
     protocol: smtp
